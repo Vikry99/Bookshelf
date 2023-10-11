@@ -1,0 +1,381 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: Raleway, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background: #4070f4;
+    padding: 16px;
+    color: white;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wrapper .container {
+    width: 1024px;
+    border-radius: 8px;
+    margin: 16px;
+    background: #F8F9FA;
+    padding: 16px;
+    flex-grow: 1;
+    height: fit-content;
+}
+
+
+.item {
+    border-radius: 16px;
+    margin-top: 16px;
+    padding: 12px 24px 12px 24px;
+    background: white;
+    display: flex;
+    align-items: center;
+}
+
+.item > .inner h2 {
+    margin-bottom: unset;
+}
+
+.item > .inner p {
+    margin-top: 5px;
+}
+
+.form {
+    display: flex;
+    padding: 16px;
+    flex-direction: column;
+    height: 550px;
+    border-radius: 16px;
+}
+
+.form_search {
+    display: flex;
+    padding: 16px;
+    flex-direction: column;
+    height: 250px;
+    border-radius: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 4px;
+    font-size: 18px;
+    font-weight: lighter;
+}
+
+.shadow {
+    box-shadow: 0 5px 10px rgba(154, 160, 185, .05), 0 15px 40px rgba(166, 173, 201, .2);
+}
+
+input[type=text], input[type=number] {
+    font-family: Raleway, sans-serif;
+    background: #F5F1FF;
+    border: 2px solid #4070f4;
+    border-radius: 8px;
+    padding: 16px;
+    box-sizing: border-box;
+    margin-bottom: 8px;
+    font-size: 24px;
+}
+
+.btn-submit {
+    width: fit-content;
+    font-family: Raleway, sans-serif;
+    border-radius: 16px;
+    padding: 12px 24px;
+    border: 2px solid #4070f4;
+    color: black;
+    font-size: 24px;
+    margin-top: auto;
+    align-self: flex-end;
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    background: #4070f4;
+    color: white;
+}
+
+input[type=text], input[type=date], .btn-submit:focus {
+    outline: none;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.form-title {
+    margin: auto 0;
+}
+
+#title::placeholder {
+    font-size: 1.2rem;
+}
+
+#year::placeholder {
+    font-size: 1.2rem;
+}
+
+#writer::placeholder {
+    font-size: 1.2rem;
+}
+
+#search-keyword::placeholder {
+    font-size: 1.2rem;
+}
+
+.check-button {
+    width: 35px;
+    height: 35px;
+
+    background: url('../assets/check-outline.svg');
+    background-size: contain;
+    margin-left: auto;
+    cursor: pointer;
+    border: none;
+}
+
+.check-button:hover {
+    background: url('../assets/check-solid.svg');
+    background-size: contain;
+}
+
+.trash-button {
+    width: 35px;
+    height: 35px;
+
+    background: url('../assets/trash-outline.svg');
+    background-size: contain;
+    margin-left: 16px;
+    cursor: pointer;
+    border: none;
+}
+
+.trash-button:hover {
+    background: url('../assets/trash-fill.svg');
+    background-size: contain;
+}
+
+.undo-button {
+    width: 35px;
+    height: 35px;
+
+    background: url('../assets/undo-ouline.svg');
+    background-size: contain;
+    margin-left: auto;
+    cursor: pointer;
+    border: none;
+}
+
+.undo-button:hover {
+    background: url('../assets/undo-ouline.svg');
+    background-size: contain;
+}
+
+.check-button:focus, .trash-button {
+    outline: none;
+}
+
+section {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: #e3f2fd;
+  }
+  button {
+    font-size: 18px;
+    font-weight: 400;
+    color: #fff;
+    padding: 14px 17px;
+    border: none;
+    background: #4070f4;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #265df2;
+  }
+  button.show-modal,
+  .modal-box {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  }
+  section.active .show-modal {
+    display: none;
+  }
+  .overlay {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    pointer-events: none;
+  }
+  section.active .overlay {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .modal-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 380px;
+    width: 100%;
+    padding: 30px 20px;
+    border-radius: 24px;
+    background-color: #fff;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+  section.active .modal-box {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  .modal-box i {
+    font-size: 70px;
+    color: #4070f4;
+  }
+  .modal-box h2 {
+    margin-top: 20px;
+    font-size: 25px;
+    font-weight: 500;
+    color: #333;
+  }
+  .modal-box h3 {
+    font-size: 16px;
+    font-weight: 400;
+    color: #333;
+    text-align: center;
+  }
+  .modal-box .buttons {
+    margin-top: 25px;
+  }
+  .modal-box button {
+    font-size: 14px;
+    padding: 6px 12px;
+    margin: 0 10px;
+  }
+
+  .switch-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .switch-label {
+    margin-right: .5rem;
+    user-select: none;
+    font-family: Raleway, sans-serif;
+    font-weight: bold;
+    font-size: 1.1em; 
+  }
+
+  .switch-checkbox {
+    opacity: 0;
+    position: absolute;
+  }
+
+  .switch-slider {
+    position: relative;
+    cursor: pointer;
+    width: 50px;
+    height: 25px;
+    background-color: #ccc;
+    border-radius: 25px;
+  }
+
+  .switch-slider:before {
+    position: absolute;
+    content: '';
+    height: 21px;
+    width: 21px;
+    left: 2px;
+    bottom: 2px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: 0.4s;
+  }
+
+  .switch-checkbox:checked + .switch-slider {
+    background-color: #4070f4; /* Changed color to #4070f4 */
+  }
+
+  .switch-checkbox:checked + .switch-slider:before {
+    transform: translateX(25px);
+  }
+
+   #search-container {
+        margin-top: 16px;
+    }
+
+   #search-keyword {
+        font-family: Raleway, sans-serif;
+        background: #F5F1FF;
+        border: 2px solid #4070f4;
+        border-radius: 8px;
+        padding: 16px;
+        box-sizing: border-box;
+        margin-bottom: 8px;
+        font-size: 24px;
+   }
+
+   #back-button {
+        font-family: Raleway, sans-serif;
+        border-radius: 16px;
+        padding: 12px 24px;
+        border: 2px solid #4070f4;
+        color: black;
+        font-size: 24px;
+        margin-top: auto;
+        align-self: flex-end;
+        cursor: pointer;
+    }
+
+    #back-button:hover {
+        background-color: #265df2;
+        color: white;
+    }
+
+
+    .button_search{
+        text-align: right;
+    }
+
+
+@media only screen and (max-width: 1024px) {
+    .wrapper {
+        margin: 0;
+    }
+
+    .wrapper .container {
+        width: 100%;
+    }
+
+    .list-item {
+        width: 90%;
+    }
+
+    .form {
+        width: 100%;
+    }
+}

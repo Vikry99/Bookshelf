@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bookshelf Apps</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<header>
+  <h1>Bookshelf</h1>
+</header>
+
+<div class="wrapper">
+  <div class="container bg-white shadow" id="add-todo">
+    <h2 class="container-header text-center">Masukan List Buku Anda</h2>
+    <form class="form" action="#" id="form">
+      <div class="form-group form-title">
+        <h3>Judul</h3>
+        <input type="text" id="title" name="title" placeholder="Masukan Judul Buku Anda" required>
+      </div>
+      <div class="form-group form-title">
+        <h3>Penulis</h3>
+        <input type="text" id="writer" name="writer" placeholder="Masukan Penulis Buku Anda" required>
+      </div>
+      <div class="form-group form-title">
+        <h3>Tahun</h3>
+        <input type="number" id="year" name="year" min="1500" max="2023" step="1" placeholder="Masukan Tahun Buku Anda" required>
+      </div>
+      <div class="switch-container form-title">
+        <label class="switch-label" for="toggleSwitch">Selesai</label>
+        <input type="checkbox" id="toggleSwitch" class="switch-checkbox">
+        <label class="switch-slider" for="toggleSwitch"></label>
+      </div>
+      <input type="submit" value="Submit" name="Submit" class="btn-submit">
+    </form>
+  </div>
+
+  <div class="container bg-white shadow" id="search-container">
+    <h2 class="container-header text-center">Cari Buku</h2>
+    <form class="form_search" id="search-form">
+        <div class="form-group form-title">
+            <h3>Keyword</h3>
+            <input type="text" id="search-keyword" placeholder="Masukkan kata kunci pencarian" required>
+        </div>
+        <div class="button_search">
+        <input type="submit" value="Back" id="back-button" class="btn-submit">
+        <input type="submit" value="Search" class="btn-submit">
+        </div>
+    </form>
+</div>
+
+  <div class="container">
+    <h2 class="container-header">Belum selesai dibaca</h2>
+    <div class="list-item" id="books">
+    </div>
+  </div>
+
+  <div class="container">
+    <h2 class="container-header">Selesai dibaca</h2>
+    <div class="list-item" id="complate-books">
+    </div>
+  </div>
+</div>
+
+<section>
+  <span class="overlay"></span>
+  <div class="modal-box">
+    <i class="fa-regular fa-circle-check"></i>
+    <h2>Success</h2>
+    <h3>Data berhasil di buat!</h3>
+    <div class="buttons">
+      <button class="close-btn">Ok, Close</button>
+    </div>
+  </div>
+</section>
+<script src="js/script.js" type="text/javascript"></script>
+</body>
+</html>
